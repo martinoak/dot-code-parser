@@ -1,0 +1,36 @@
+{
+    "name": "martinoak/dot-code-parser",
+    "description": "Parse tire DOT codes into factory code, size code, week and year of manufacture.",
+    "keywords": ["dot", "tire", "tyre", "tin", "parser", "dot-code"],
+    "homepage": "https://github.com/martinoak/dot-code-parser",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Oak"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Martinoak\\DotCodeParser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Martinoak\\DotCodeParser\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

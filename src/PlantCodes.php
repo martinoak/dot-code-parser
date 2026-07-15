@@ -199,6 +199,152 @@ final class PlantCodes
     ];
 
     /**
+     * @var array<string, string>
+     *
+     * Simple manufacturer names extracted from the full plant descriptions.
+     */
+    private const MANUFACTURERS = [
+        'AP' => 'Michelin',
+        '1AP' => 'Michelin',
+        'BE' => 'Michelin',
+        '1BE' => 'Michelin',
+        'BF' => 'Michelin',
+        '1BF' => 'Michelin',
+        'M3' => 'Michelin',
+        '1M3' => 'Michelin',
+        '4M' => 'Michelin',
+        '14M' => 'Michelin',
+        '2X' => 'Michelin',
+        'M5' => 'Michelin',
+        '1M5' => 'Michelin',
+        'A1' => 'Michelin',
+        '1A1' => 'Michelin',
+        'B1' => 'Michelin',
+        '1B1' => 'Michelin',
+        'FJ' => 'Michelin',
+        '1FJ' => 'Michelin',
+        '5E' => 'Michelin',
+        '15E' => 'Michelin',
+        'FF' => 'Michelin',
+        'DK' => 'Michelin',
+        '1DK' => 'Michelin',
+        'FT' => 'Michelin',
+        '1FT' => 'Michelin',
+        'FX' => 'Michelin',
+        '1FX' => 'Michelin',
+        'B7' => 'Michelin',
+        '1B7' => 'Michelin',
+        'ED' => 'Nihon Michelin',
+        '1ED' => 'Nihon Michelin',
+        '7V' => 'Michelin Shenyang',
+        '17V' => 'Michelin Shenyang',
+        '22' => 'Michelin',
+        '122' => 'Michelin',
+        'C1' => 'Michelin (Nigeria)',
+        '1C1' => 'Michelin (Nigeria)',
+        'K0' => 'Michelin',
+        '1K0' => 'Michelin',
+        'HA' => 'Michelin',
+        '1HA' => 'Michelin',
+        'HB' => 'Michelin',
+        '1HB' => 'Michelin',
+        'HD' => 'Michelin Italiana',
+        '1HD' => 'Michelin Italiana',
+        'HE' => 'Michelin Italiana',
+        '1HE' => 'Michelin Italiana',
+        '1C' => 'Bridgestone/Firestone',
+        'AE' => 'Bridgestone',
+        '1AE' => 'Bridgestone',
+        '15C' => 'Bridgestone Hispania',
+        '5C' => 'Bridgestone Hispania',
+        'A7' => 'Bridgestone',
+        '1A7' => 'Bridgestone',
+        'A8' => 'Bridgestone',
+        '1A8' => 'Bridgestone',
+        'C5' => 'Bridgestone',
+        '1C5' => 'Bridgestone',
+        'JY' => 'Bridgestone',
+        '1JY' => 'Bridgestone',
+        '1U' => 'Bridgestone (Tianjin)',
+        'DH' => 'Bridgestone',
+        '1DH' => 'Bridgestone',
+        'M6' => 'Goodyear',
+        '1M6' => 'Goodyear',
+        'A5' => 'TC Dębica (Goodyear)',
+        '1A5' => 'TC Dębica (Goodyear)',
+        'CO' => 'Goodyear',
+        'C01' => 'Goodyear',
+        '7L' => 'Goodyear',
+        '17L' => 'Goodyear',
+        '1T' => 'Goodyear',
+        '4B' => 'Goodyear Canada',
+        '14B' => 'Goodyear Canada',
+        '1NW' => 'Goodyear (South Africa)',
+        'NW' => 'Goodyear (South Africa)',
+        '1NY' => 'Goodyear (Thailand)',
+        'NY' => 'Goodyear (Thailand)',
+        'AF' => 'Continental',
+        '1AF' => 'Continental',
+        'A3' => 'Continental Tire North America',
+        '1A3' => 'Continental Tire North America',
+        'B2' => 'Continental',
+        '1B2' => 'Continental',
+        'XA' => 'Pirelli Pneumatici',
+        '1XA' => 'Pirelli Pneumatici',
+        '8U' => 'Pirelli Tyre',
+        '18U' => 'Pirelli Tyre',
+        'HT' => 'Pirelli',
+        '1HT' => 'Pirelli',
+        'CE' => 'Pirelli Germany',
+        '1CE' => 'Pirelli Germany',
+        'EB' => 'Metzeler (Pirelli)',
+        '1EB' => 'Metzeler (Pirelli)',
+        '51' => 'Pirelli Tyre',
+        '151' => 'Pirelli Tyre',
+        '1B' => 'Pirelli de Venezuela',
+        '11B' => 'Pirelli de Venezuela',
+        'BB' => 'Hankook',
+        '1BB' => 'Hankook',
+        'BC' => 'Hankook',
+        '1BC' => 'Hankook',
+        'BJ' => 'Hankook',
+        '1BJ' => 'Hankook',
+        '4U' => 'Yokohama Tire Philippines',
+        '14U' => 'Yokohama Tire Philippines',
+        'AT' => 'Cooper',
+        '1AT' => 'Cooper',
+        'A6' => 'Apollo Tyres',
+        '1A6' => 'Apollo Tyres',
+        'AH' => 'Sumitomo',
+        '1AH' => 'Sumitomo',
+        'A9' => 'Titan Tire',
+        '1A9' => 'Titan Tire',
+        'C4' => 'Carlisle Tire & Wheel',
+        '1C4' => 'The Carlstar Group',
+        'AG' => 'JK Tornel',
+        '2A6' => 'JK Tornel',
+        'HW' => 'Continental Barum',
+        '1HW' => 'Continental Barum',
+        '54' => 'Mitas',
+        '154' => 'Mitas',
+        'YL' => 'Nokian Tyres',
+        '1YL' => 'Nokian Tyres',
+        '03B' => 'Nokian Tyres',
+        '60' => 'Nokian Tyres',
+        '160' => 'Nokian Tyres',
+        'AA' => 'Tianjin Normandy Rubber',
+        '1AA' => 'Tianjin Normandy Rubber',
+        'AB' => 'Weifang Rubber Factory',
+        '1AB' => 'Weifang Rubber Factory',
+        'AC' => 'Shandong Huasheng Rubber',
+        '1AC' => 'Shandong Huasheng Rubber',
+        'AD' => 'Shandong Yongfeng Tyres',
+        '1AD' => 'Shandong Yongfeng Tyres',
+        'AR' => 'OJSC Yaroslavl',
+        '1AR' => 'OJSC Yaroslavl',
+    ];
+
+    /**
      * Resolve a factory code to a plant/manufacturer name, or null if unknown.
      */
     public static function name(string $factoryCode): ?string
@@ -207,10 +353,26 @@ final class PlantCodes
     }
 
     /**
+     * Resolve a factory code to a simple manufacturer name, or null if unknown.
+     */
+    public static function manufacturer(string $factoryCode): ?string
+    {
+        return self::MANUFACTURERS[strtoupper($factoryCode)] ?? null;
+    }
+
+    /**
      * @return array<string, string>
      */
     public static function all(): array
     {
         return self::MAP;
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function allManufacturers(): array
+    {
+        return self::MANUFACTURERS;
     }
 }

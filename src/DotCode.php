@@ -15,6 +15,7 @@ final class DotCode
         public readonly string $optionalCode,
         public readonly int $week,
         public readonly int $year,
+        public readonly ?string $manufacturer,
         public readonly ?string $plantName,
     ) {
     }

@@ -75,6 +75,7 @@ final class DotCodeParser
             optionalCode: $optionalCode,
             week: $week,
             year: $this->fullYear((int) $year),
+            manufacturer: PlantCodes::manufacturer($factoryCode),
             plantName: PlantCodes::name($factoryCode),
         );
     }
